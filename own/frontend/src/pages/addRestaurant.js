@@ -101,7 +101,7 @@ export default function AddRestaurant() {
     formData.append("email", inputs.email);
     formData.append("tags", inputs.tags);
     formData.append("costForOne", inputs.costForOne);
-    formData.append("minOrderAmount", inputs.minOrderAmount);
+    formData.append("minOrderAmount", 100);
     formData.append("remainingSeats", inputs.remainingSeats);
     formData.append("street", inputs.street);
     formData.append("aptName", inputs.aptName);
@@ -211,7 +211,7 @@ export default function AddRestaurant() {
                     fullWidth
                     required
                   />
-                  <TextField
+                  {/* <TextField
                     id="minOrderAmount"
                     name="minOrderAmount"
                     label="Min Order Amount"
@@ -224,7 +224,7 @@ export default function AddRestaurant() {
                     type="number"
                     fullWidth
                     required
-                  />
+                  /> */}
                    <TextField
                     id="remainingSeats"
                     name="remainingSeats"
@@ -247,18 +247,6 @@ export default function AddRestaurant() {
                     Address:
                   </Typography>
                   <div className={classes.address}>
-                    <TextField
-                      id="aptName"
-                      name="aptName"
-                      label="Floor/Apartment Name"
-                      className={classes.textField}
-                      onChange={handleInputChange}
-                      value={inputs.aptName}
-                      helperText={aptError}
-                      error={aptError ? true : false}
-                      fullWidth
-                      required
-                    />
                     <TextField
                       id="locality"
                       name="locality"
@@ -283,10 +271,22 @@ export default function AddRestaurant() {
                       fullWidth
                       required
                     />
+                      <TextField
+                      id="aptName"
+                      name="aptName"
+                      label="Floor/Apartment Name"
+                      className={classes.textField}
+                      onChange={handleInputChange}
+                      value={inputs.aptName}
+                      helperText={aptError}
+                      error={aptError ? true : false}
+                      fullWidth
+                      required
+                    />
                     <TextField
                       id="zipCode"
                       name="zip"
-                      label="Zip Code"
+                      label="postal code"
                       className={classes.textField}
                       onChange={handleInputChange}
                       value={inputs.zip}

@@ -51,7 +51,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Cart = (props) => {
   const [step, setStep] = useState(1);
-
+  const [bookingNumbers,setbookingNumbers] = useState();
+  const [bookingTime,setbookingTime] = useState("")
   const dispatch = useDispatch();
   const classes = useStyles();
   const { loading, cart, price } = useSelector((state) => state.data);
@@ -79,8 +80,8 @@ const Cart = (props) => {
       locality: "新北市汐止區",
       zip: "221",
       phoneNo: inputs.phoneNo,
-      bookingTime: inputs.bookingTime,
-      bookingNumbers: inputs.bookingNumbers
+      bookingTime: bookingTime,
+      bookingNumbers: bookingNumbers
     };
     console.log(`props.location.state=${props.location.state}`)
     dispatch(fetchAddress(userData, history));
@@ -154,7 +155,7 @@ const Cart = (props) => {
         <>
           <Typography variant="h5" className={classes.title}>
             {step === 1 && `Cart (${cartItems} Items)`}
-            {step === 2 && "Delivery Details"}
+            {step === 2 && "Reservation Details"}
           </Typography>
           {step === 2 && (
             <MyButton tip="Go Back" onClick={prevStep}>
@@ -248,8 +249,8 @@ const Cart = (props) => {
                       label="訂位人數"
                       className={classes.textField}
                       type="number"
-                      onChange={handleInputChange}
-                      value={inputs.bookingNumbers}
+                      onChange={(e)=>setbookingNumbers(e.target.value)}
+                      value={bookingNumbers}
                       error={bookingNumbersError ? true: false}
                       fullWidth
                       required
@@ -260,8 +261,8 @@ const Cart = (props) => {
                       label="訂位時間"
                       className={classes.textField}
                       type="string"
-                      onChange={handleInputChange}
-                      value={inputs.bookingTime}
+                      onChange={(e)=>setbookingTime(e.target.value)}
+                      value={bookingTime}
                       error={bookingTimeError ? true: false}
                       fullWidth
                       required

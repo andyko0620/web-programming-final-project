@@ -312,6 +312,8 @@ exports.postOrder = (req, res, next) => {
             },
             items: items,
             status: "Placed",
+            bookingNumbers: req.body.bookingNumbers,
+            bookingTime: req.body.bookingTime,
             seller: {
               name: seller.name,
               phone: seller.address.phoneNo,

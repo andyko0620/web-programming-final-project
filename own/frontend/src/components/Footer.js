@@ -8,10 +8,12 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
+import "./Footer.css"
+import fork from "../images/fork.png"
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: "#e8ede1",
+    backgroundColor: "pink",
+    opacity: 0.8,
     marginTop: 40,
     height: "42vh",
     textAlign: "center",
@@ -38,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#5a5c5a",
     },
   },
+
 }));
 
 export default function Footer() {
@@ -47,34 +50,36 @@ export default function Footer() {
     <Grid container direction="row" className={classes.container}>
       <Grid item xs={12} sm={4} className={classes.innerCont}>
         {authenticated ? (
-          <Grid container direction="row">
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h5" component="p">
-                Company
-              </Typography>
-              <Typography variant="body1" component="p">
-                <br />
-                - About <br />
-                - Blog <br />
-                - Careers <br />
-                - Contact <br />
-                - Report Fraud <br />
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h5" component="p">
-                For You
-              </Typography>
-              <Typography variant="body1" component="p">
-                <br />
-                - Privacy <br />
-                - Terms <br />
-                - Security <br />
-                - Sitemap <br />
-                - Code of conduct <br />
-              </Typography>
-            </Grid>
-          </Grid>
+       <Grid container direction="row">
+       <Grid item xs={12} sm={6}>
+         <Typography variant="h5" component="p">
+           Company
+         </Typography>
+         <Typography variant="body1" component="p">
+           <br />
+           - About <br />
+           - Blog <br />
+           - Careers <br />
+           - Contact <br />
+           - Report Fraud <br />
+         </Typography>
+       </Grid>
+       <Grid item xs={12} sm={6}>
+         <Typography variant="h5" component="p">
+           For You
+         </Typography>
+         <Typography variant="body1" component="p">
+           <br />
+           - Privacy <br />
+           - Terms <br />
+           - Security <br />
+           - Sitemap <br />
+           - Code of conduct <br />
+         </Typography>
+       </Grid>
+     </Grid>
+
+          
         ) : (
           <>
             <Typography variant="h4" component="p">
@@ -91,15 +96,16 @@ export default function Footer() {
           </>
         )}
       </Grid>
-      <Grid item xs={12} sm={3} className={classes.innerCont}>
-        <Typography variant="h5" component="p">
+       <Grid item xs={12} sm={3} className={classes.innerCont}>
+        {/* <Typography variant="h5" component="p">
           FoodHub NewsLetter
         </Typography>
         <Typography variant="body1" component="p" style={{ marginBottom: 28 }}>
           Stay updated with new offers from FoodHub
         </Typography>
         <TextField label="Your Email address" variant="outlined" />
-        <Button className={classes.buttonStyleTwo}>SEND</Button>
+        <Button className={classes.buttonStyleTwo}>SEND</Button> */}
+        <img height="200" src={fork} />
       </Grid>
       <Grid item xs={12} sm={3} className={classes.resources}>
         <Typography variant="h5" component="p">
@@ -115,6 +121,6 @@ export default function Footer() {
           - Freepik <br />
         </Typography>
       </Grid>
-    </Grid>
+    </Grid> 
   );
 }

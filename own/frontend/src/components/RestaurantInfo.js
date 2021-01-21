@@ -83,11 +83,11 @@ function Restaurant(props) {
                 {tags}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Costs Rs.{costForOne} for one
+                Costs ${costForOne} for one
               </Typography>
-              <Typography variant="body2" color="textPrimary">
+              {/* <Typography variant="body2" color="textPrimary">
                 Minimum order Rs.{minOrderAmount}
-              </Typography>
+              </Typography> */}
               <Typography variant="body2" color="textPrimary">
                 {paymentString}
               </Typography>
@@ -111,8 +111,8 @@ function Restaurant(props) {
                 <SwipeableImages images={imageUrl} type="restaurant" />
               ) : null}
             </Grid>
-            <div className={classes.borderLeft}></div>
-            <div className={classes.borderBottom}></div>
+            {/* <div className={classes.borderLeft}></div> */}
+            
             <Grid item xs={false} sm={1} />
           </Grid>
         </>

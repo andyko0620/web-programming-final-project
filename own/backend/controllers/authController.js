@@ -292,11 +292,11 @@ exports.signupSeller = (req, res, next) => {
 
 
 exports.imagesTest = (req, res, next) => {
-  // if (!req.files) {
-  //   const error = new Error("Upload an image as well.");
-  //   error.statusCode = 422;
-  //   throw error;
-  // }
+  if (!req.files) {
+    const error = new Error("Upload an image as well.");
+    error.statusCode = 422;
+    throw error;
+  }
 
   const arrayFiles = req.files.map((file) => file.path);
   console.log(arrayFiles);

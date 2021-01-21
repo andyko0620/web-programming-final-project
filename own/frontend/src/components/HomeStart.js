@@ -6,7 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 import cover from "../images/food_upscaled.png";
-
+import cover2 from "../images/reserve.jpg"
+import icon from "../images/icon.png"
 const useStyles = makeStyles((theme) => ({
   presentation: {
     display: "flex",
@@ -48,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
   coverImg: {
     height: "100%",
   },
+  iconImg: {
+    height: "50%"
+  },
   ctaOrder: {
     fontSize: 18,
     backgroundColor: "#f7a692",
@@ -57,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
 
 const HomeStart = () => {
   const classes = useStyles();
+  // const searchInput = useRef()
+  // const focusSearchInput = searchInput.current.focus();
+  // useEffect( () =>focusSearchInput() )
   return (
     <section className={classes.presentation}>
       <div className={classes.introduction}>
@@ -64,19 +71,20 @@ const HomeStart = () => {
           Safe Food
         </Typography>
         <Typography className={classes.delivery} noWrap>
-          DELIVERY
+          Reservation
         </Typography>
-        <Typography variant="body2" className={classes.paragraph}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet.
-        </Typography>
-        <Button variant="outlined" className={classes.ctaOrder}>
-          ORDER NOW
-        </Button>
+        {/* <Typography variant="body2" className={classes.paragraph}>
+          No longer wait,reserve now!
+        </Typography> */}
+        {/* <Typography className={classes.delivery} noWrap>
+            No longer wait
+            <br></br>
+            RESERVE and ORDER NOW
+        </Typography> */}
+        <img src={icon} alt="icon" className={classes.iconImg} />
       </div>
       <div className={classes.cover}>
-        <img src={cover} alt="safe-delivery" className={classes.coverImg} />
+        <img src={cover2} alt="safe-delivery" className={classes.coverImg} />
       </div>
     </section>
   );
