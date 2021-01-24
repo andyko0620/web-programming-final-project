@@ -10,6 +10,10 @@ By default the local server will start on port 3002
 輸入http://localhost:3002  即可進入前端測試 
 若要新增店家照片，須將照片丟進images資料夾。
 
+這邊也附上一組測試用店家帳號:
+email: milkking@gmail.com
+password: milkking
+
 # web-programming-final-project
 [109-1] Web Programming Final
 Group 73 餐廳訂位系統-Foodhub
