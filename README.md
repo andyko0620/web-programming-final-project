@@ -11,6 +11,7 @@ By default the local server will start on port 3002
 若要新增店家照片，須將照片丟進images資料夾。
 
 這邊也附上一組測試用店家帳號:
+
 email: milkking@gmail.com 
 
 password: milkking
